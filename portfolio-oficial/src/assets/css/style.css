@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+
+    /* 1. Melhorar a renderização e fluidez geral */
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        scroll-behavior: smooth;
+    }
+
+    /* 2. Configurar o corpo da página */
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.5;
+    }
+
+    /* 3. Garantir que mídias sejam responsivas e não quebrem o layout */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    /* 4. Evitar que textos longos quebrem o contêiner */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+
+    /* 5. Estilizar a barra de rolagem (Scrollbar moderna) */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-zinc-600);
+        /* Sintaxe atualizada para acessar cores no v4 */
+        border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-zinc-500);
+    }
+
+    /* 6. Remover o fundo azul feio no mobile ao clicar em botões/links */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+    --font-inter: "Inter", sans-serif;
+
+    --color-white-ofc: #E8EEF2;
+    --color-yellow-ofc: #FFCA3A;
+    --color-black-ofc: #170A1C;
+}
